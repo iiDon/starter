@@ -21,11 +21,12 @@ const Layout = () => {
         </div>
         <div
           className={cn(
+            "flex flex-col h-screen",
             isSidebarOpen ? "col-span-5 md:col-span-4" : "col-span-5"
           )}
         >
           <Header />
-          <ScrollArea dir="rtl" className="p-6 h-[90vh] overflow-y-auto">
+          <ScrollArea dir="rtl" className="px-6 pt-6  overflow-y-auto">
             <Outlet />
           </ScrollArea>
         </div>

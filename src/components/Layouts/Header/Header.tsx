@@ -9,7 +9,7 @@ const Header = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarStore((state) => state);
 
   return (
-    <header className="flex justify-between  py-2 px-8 shadow-sm bg-white">
+    <header className="flex justify-between py-2 px-8 shadow-sm bg-white">
       <div className="block md:hidden">
         <Drawer />
       </div>

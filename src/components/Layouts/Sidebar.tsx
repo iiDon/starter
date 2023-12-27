@@ -8,7 +8,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="text-white bg-primary p-4 h-full">
+    <div className="text-white bg-primary p-4 overflow-y-auto h-screen ">
       <div>
         <Logo />
         <div className="gap-y-4">
