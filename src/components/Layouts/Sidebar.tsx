@@ -2,7 +2,8 @@ import { cn } from "@/lib/shadcn";
 import { ROUTES } from "./Routes";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
-import Logo from "./Logo";
+import { Logo } from "./Drawer";
+
 const Sidebar = () => {
   const location = useLocation();
 

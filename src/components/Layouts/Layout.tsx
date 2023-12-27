@@ -13,15 +13,17 @@ const Layout = () => {
       <div className="w-full grid grid-cols-5">
         <div
           className={cn(
-            "transition-transform duration-300 ease-in-out",
-            isSidebarOpen
-              ? "col-span-1 translate-x-0"
-              : "hidden -translate-x-full"
+            "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+            isSidebarOpen ? "col-span-1 hidden md:block  " : "hidden"
           )}
         >
           <Sidebar />
         </div>
-        <div className={cn(isSidebarOpen ? "col-span-4" : "col-span-5")}>
+        <div
+          className={cn(
+            isSidebarOpen ? "col-span-5 md:col-span-4" : "col-span-5"
+          )}
+        >
           <Header />
           <ScrollArea dir="rtl" className="p-6 h-[90vh] overflow-y-auto">
             <Outlet />

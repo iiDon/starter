@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -13,7 +14,9 @@ const Language = () => {
   return (
     <DropdownMenu dir="rtl">
       <DropdownMenuTrigger asChild>
-        <GlobeIcon />
+        <Button variant="ghost">
+          <GlobeIcon />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-24">
         <DropdownMenuLabel>اللغة</DropdownMenuLabel>
