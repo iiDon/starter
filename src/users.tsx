@@ -1,125 +1,13 @@
+import { columns } from "./components/Users/columns";
+import { DataTable } from "./components/ui/data-table";
+import { getData } from "./components/Users/fakeData";
+
 const Users = () => {
+  const data = getData();
   return (
     <div>
       User
-      <div>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique,
-        dignissimos totam! Consequuntur voluptatibus eligendi totam eaque ipsam
-        ea error quaerat sed. Molestias eos earum laudantium error suscipit
-        molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.lsLorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Similique, dignissimos totam! Consequuntur
-        voluptatibus eligendi totam eaque ipsam ea error quaerat sed. Molestias
-        eos earum laudantium error suscipit molestiae nesciunt
-        voluptatibus.lsLorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Similique, dignissimos totam! Consequuntur voluptatibus eligendi totam
-        eaque ipsam ea error quaerat sed. Molestias eos earum laudantium error
-        suscipit molestiae nesciunt voluptatibus.ls
-      </div>
+      <DataTable columns={columns} data={data} />
     </div>
   );
 };
