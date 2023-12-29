@@ -8,7 +8,6 @@ import {
   getCoreRowModel,
   useReactTable,
   getPaginationRowModel,
-  Pagination,
 } from "@tanstack/react-table";
 
 import {
@@ -20,15 +19,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import React from "react";
-import {
-  Pagination as PaginationComp,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
