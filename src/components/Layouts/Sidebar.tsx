@@ -3,12 +3,14 @@ import { ROUTES } from "./Routes";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Logo } from "./Drawer";
+import { ExitIcon } from "@radix-ui/react-icons";
+import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="text-white bg-primary p-4 overflow-y-auto h-screen ">
+    <div className="text-white justify-between flex flex-col bg-primary p-4 overflow-y-auto h-screen ">
       <div>
         <Logo />
         <div className="gap-y-4">
@@ -30,6 +32,7 @@ const Sidebar = () => {
           })}
         </div>
       </div>
+      <LogoutButton />
     </div>
   );
 };
