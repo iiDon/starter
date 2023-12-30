@@ -14,7 +14,7 @@ const Language = () => {
   return (
     <DropdownMenu dir="rtl">
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost">
+        <Button size={"icon"} variant="ghost">
           <GlobeIcon />
         </Button>
       </DropdownMenuTrigger>

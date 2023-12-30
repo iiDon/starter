@@ -33,11 +33,13 @@ const Drawer = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <Button className="p-2.5" asChild>
-          <HamburgerMenuIcon
-            className="w-full text-white"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          />
+        <Button
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          size={"icon"}
+          className="p-2.5"
+          asChild
+        >
+          <HamburgerMenuIcon className="w-full text-white" />
         </Button>
       </SheetTrigger>
       <SheetContent

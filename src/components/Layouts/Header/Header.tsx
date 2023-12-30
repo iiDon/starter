@@ -16,19 +16,16 @@ const Header = () => {
 
       <div>
         <Button
-          asChild
-          className="hidden cursor-pointer md:block p-2.5"
+          size={"icon"}
+          className="hidden  md:block p-2.5"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
-          <HamburgerMenuIcon
-            className="w-full text-white"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-          />
+          <HamburgerMenuIcon />
         </Button>
       </div>
       <div className="flex gap-x-2 items-center">
         <Language />
-        <Button variant={"ghost"}>
+        <Button size={"icon"} variant={"ghost"}>
           <BellIcon />
         </Button>
         <AvatarComponent />
