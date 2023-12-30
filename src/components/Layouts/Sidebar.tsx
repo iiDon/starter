@@ -3,7 +3,6 @@ import { ROUTES } from "./Routes";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Logo } from "./Drawer";
-import { ExitIcon } from "@radix-ui/react-icons";
 import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {

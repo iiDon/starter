@@ -6,7 +6,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button } from "../ui/button";
-import { ExitIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import useSidebarStore from "@/store/sidebar";
 import { cn } from "@/lib/shadcn";
 import { Link, useLocation } from "react-router-dom";
