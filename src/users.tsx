@@ -5,7 +5,7 @@ import { getData } from "./components/Users/fakeData";
 const Users = () => {
   const data = getData();
   return (
-    <div>
+    <div className="w-full">
       User
       <DataTable columns={columns} data={data} />
     </div>

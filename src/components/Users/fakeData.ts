@@ -1,35 +1,31 @@
-type Payment = {
+export type User = {
   id: string;
-  amount: number;
-  status: "بالانتظار" | "تحت المعالجة" | "مدفوع" | "مرفوض";
+  name: string;
   email: string;
+  isActive: boolean;
 };
 
 function getRandomId() {
   return Math.random().toString(36).substring(7);
 }
 
-function getRandomPayment(): Payment {
-  const statuses: Payment["status"][] = [
-    "بالانتظار",
-    "تحت المعالجة",
-    "مدفوع",
-    "مرفوض",
-  ];
-  const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
+function getRandomUser(): User {
+  const randomisActive = Math.random() > 0.5;
+
+  const name = Math.random().toString(36).substring(2, 10);
 
   return {
     id: getRandomId(),
-    amount: Math.floor(Math.random() * 1000) + 1,
-    status: randomStatus,
+    name,
     email: Math.random().toString(36).substring(2, 10) + "@example.com",
+    isActive: randomisActive,
   };
 }
 
-export function getData(): Payment[] {
-  const data: Payment[] = [];
+export function getData(): User[] {
+  const data: User[] = [];
   for (let i = 0; i < 24; i++) {
-    data.push(getRandomPayment());
+    data.push(getRandomUser());
   }
   return data;
 }

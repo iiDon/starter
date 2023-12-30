@@ -3,7 +3,6 @@ import Sidebar from "./Sidebar";
 import Header from "./Header/Header";
 import { cn } from "@/lib/shadcn";
 import useSidebarStore from "@/store/sidebar";
-import { ScrollArea } from "../ui/scroll-area";
 
 const Layout = () => {
   const { isSidebarOpen } = useSidebarStore((state) => state);
@@ -26,9 +25,9 @@ const Layout = () => {
           )}
         >
           <Header />
-          <ScrollArea dir="rtl" className="px-6 pt-6  overflow-y-auto">
+          <section dir="rtl" className="px-6 pt-6  overflow-y-auto">
             <Outlet />
-          </ScrollArea>
+          </section>
         </div>
       </div>
     </div>

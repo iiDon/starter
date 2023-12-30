@@ -13,17 +13,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
+import { User } from "./fakeData";
+import { cn } from "@/lib/shadcn";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Payment = {
-  id: string;
-  amount: number;
-  status: "بالانتظار" | "تحت المعالجة" | "مدفوع" | "مرفوض";
-  email: string;
-};
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<User>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -45,25 +41,27 @@ export const columns: ColumnDef<Payment>[] = [
     ),
   },
   {
-    accessorKey: "status",
-    header: "الحالة",
+    accessorKey: "name",
+    header: "الاسم",
   },
   {
     accessorKey: "email",
     header: "البريد",
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">التكلفة</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
+    accessorKey: "isActive",
+    header: "الحالة",
 
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    cell: (value) => (
+      <div
+        className={cn(
+          "border w-24 text-center px-4 py-1 text-white rounded shadow-sm",
+          value.getValue() ? "bg-green-500" : "bg-red-500"
+        )}
+      >
+        {value.getValue() ? "فعال" : "غير فعال"}
+      </div>
+    ),
   },
   {
     id: "actions",
