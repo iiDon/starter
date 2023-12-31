@@ -32,10 +32,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      <div className="gap-y-4 flex flex-col">
-        <hr />
-        <LogoutButton />
-      </div>
+      <LogoutButton />
     </div>
   );
 };
