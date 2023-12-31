@@ -12,7 +12,7 @@ const Layout = () => {
       <div className="w-full grid grid-cols-5">
         <div
           className={cn(
-            "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+            "",
             isSidebarOpen ? "col-span-1 hidden md:block  " : "hidden"
           )}
         >
