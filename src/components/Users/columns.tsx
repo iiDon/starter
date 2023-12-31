@@ -13,9 +13,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Checkbox } from "@/components/ui/checkbox";
-import { User } from "./fakeData";
-import { cn } from "@/lib/shadcn";
 import { useToast } from "../ui/use-toast";
+import { User } from "@/store/user";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -42,33 +41,19 @@ export const columns: ColumnDef<User>[] = [
     ),
   },
   {
-    accessorKey: "name",
+    accessorKey: "title",
     header: "الاسم",
   },
   {
-    accessorKey: "email",
-    header: "البريد",
-  },
-  {
-    accessorKey: "isActive",
-    header: "الحالة",
-
-    cell: (value) => (
-      <div
-        className={cn(
-          "border w-24 text-center px-4 py-1 text-white rounded shadow-sm",
-          value.getValue() ? "bg-green-500" : "bg-red-500"
-        )}
-      >
-        {value.getValue() ? "فعال" : "غير فعال"}
-      </div>
-    ),
+    accessorKey: "price",
+    header: "السعر",
   },
   {
     id: "actions",
     cell: ({ row }) => {
       const { toast } = useToast();
       const user = row.original;
+      console.log("user", user);
       return (
         <DropdownMenu dir="rtl">
           <DropdownMenuTrigger asChild>
@@ -81,7 +66,7 @@ export const columns: ColumnDef<User>[] = [
             <DropdownMenuLabel>عمليات</DropdownMenuLabel>
             <DropdownMenuItem
               onClick={() => {
-                navigator.clipboard.writeText(user.id);
+                navigator.clipboard.writeText(String(user.id));
                 toast({
                   title: "تم نسخ المعرف",
                   description: "تم نسخ المعرف بنجاح",

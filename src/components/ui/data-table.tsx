@@ -19,15 +19,24 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import React from "react";
+import { Skeleton } from "./skeleton";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
+  isLoading?: boolean; // when fetching data
+  currentPage: number;
+  setCurrentPage: (currentPage: number) => void;
+  totalPages?: number;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  isLoading,
+  currentPage,
+  setCurrentPage,
+  totalPages,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
 
@@ -37,8 +46,14 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onRowSelectionChange: setRowSelection,
+    manualPagination: true,
+    pageCount: 10,
     state: {
       rowSelection,
+      pagination: {
+        pageIndex: currentPage - 1,
+        pageSize: 10,
+      },
     },
   });
 
@@ -73,9 +88,15 @@ export function DataTable<TData, TValue>({
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
+                      {isLoading ? (
+                        <Skeleton key={row.id} className="h-8" />
+                      ) : (
+                        <>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </>
                       )}
                     </TableCell>
                   ))}
@@ -99,19 +120,26 @@ export function DataTable<TData, TValue>({
         <Button
           variant="outline"
           size="sm"
-          onClick={() => table.previousPage()}
+          onClick={() => {
+            table.previousPage();
+            setCurrentPage(currentPage - 1);
+          }}
           disabled={!table.getCanPreviousPage()}
         >
           السابق
         </Button>
         <span>
-          {table.getState().pagination.pageIndex + 1} من {table.getPageCount()}
+          {table.getState().pagination.pageIndex + 1} من{" "}
+          {(totalPages && totalPages / 10) || 0}
         </span>
 
         <Button
           variant="outline"
           size="sm"
-          onClick={() => table.nextPage()}
+          onClick={async () => {
+            table.nextPage();
+            setCurrentPage(currentPage + 1);
+          }}
           disabled={!table.getCanNextPage()}
         >
           التالي
