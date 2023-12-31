@@ -15,6 +15,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { User } from "./fakeData";
 import { cn } from "@/lib/shadcn";
+import { useToast } from "../ui/use-toast";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -66,7 +67,8 @@ export const columns: ColumnDef<User>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const payment = row.original;
+      const { toast } = useToast();
+      const user = row.original;
       return (
         <DropdownMenu dir="rtl">
           <DropdownMenuTrigger asChild>
@@ -78,7 +80,14 @@ export const columns: ColumnDef<User>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>عمليات</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => {
+                navigator.clipboard.writeText(user.id);
+                toast({
+                  title: "تم نسخ المعرف",
+                  description: "تم نسخ المعرف بنجاح",
+                  variant: "success",
+                });
+              }}
             >
               نسخ المعرف
             </DropdownMenuItem>

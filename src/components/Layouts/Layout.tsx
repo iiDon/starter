@@ -3,12 +3,14 @@ import Sidebar from "./Sidebar";
 import Header from "./Header/Header";
 import { cn } from "@/lib/shadcn";
 import useSidebarStore from "@/store/sidebar";
+import { Toaster } from "../ui/toaster";
 
 const Layout = () => {
   const { isSidebarOpen } = useSidebarStore((state) => state);
 
   return (
     <div dir="rtl" className="flex bg-secondary h-screen  justify-center">
+      <Toaster />
       <div className="w-full grid grid-cols-5">
         <div
           className={cn(
