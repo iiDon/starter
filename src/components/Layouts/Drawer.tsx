@@ -18,7 +18,7 @@ import LogoutButton from "./LogoutButton";
 export const Logo = () => {
   return (
     <div>
-      <img className=" w-36 m-auto" src={imgUrl} alt="logo" />
+      <img className="w-36 m-auto" src={imgUrl} alt="logo" />
       <div className="my-4">
         <hr />
       </div>
@@ -39,12 +39,12 @@ const Drawer = () => {
           className="p-2.5"
           asChild
         >
-          <HamburgerMenuIcon className="w-full text-white" />
+          <HamburgerMenuIcon className="w-full text-primary-foreground" />
         </Button>
       </SheetTrigger>
       <SheetContent
         dir="rtl"
-        className="text-white justify-between flex flex-col bg-primary p-4 h-full"
+        className="text-primary-foreground justify-between flex flex-col bg-primary p-4 h-full"
       >
         <div>
           <Logo />
@@ -55,8 +55,8 @@ const Drawer = () => {
                 <SheetClose asChild key={route.path}>
                   <Button
                     className={cn(
-                      "flex mb-4 hover:bg-blue-500 text-white hover:text-white items-center justify-start gap-x-2 w-full",
-                      location.pathname === route.path && "bg-blue-700 "
+                      "flex mb-4 hover:bg-darkPrimary text-white hover:text-white items-center justify-start gap-x-2 w-full",
+                      location.pathname === route.path && "bg-darkPrimary "
                     )}
                     variant="ghost"
                     asChild

@@ -13,7 +13,6 @@ const Users = () => {
 
   return (
     <div className="w-full">
-      Users
       <DataTable
         columns={columns}
         data={users}

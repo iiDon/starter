@@ -53,7 +53,6 @@ export const columns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       const { toast } = useToast();
       const user = row.original;
-      console.log("user", user);
       return (
         <DropdownMenu dir="rtl">
           <DropdownMenuTrigger asChild>

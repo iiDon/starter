@@ -9,7 +9,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="text-white justify-between flex flex-col bg-primary p-4 overflow-y-auto h-screen ">
+    <div className="text-primary-foreground justify-between flex flex-col bg-primary p-4 overflow-y-auto h-screen ">
       <div>
         <Logo />
         <div className="gap-y-4">
@@ -19,8 +19,8 @@ const Sidebar = () => {
                 <Button
                   variant="ghost"
                   className={cn(
-                    "flex mb-4 hover:bg-blue-500 hover:text-white items-center justify-start gap-x-2 w-full",
-                    location.pathname === route.path && "bg-blue-500"
+                    "flex mb-4 hover:bg-darkPrimary hover:text-primary-foreground items-center justify-start gap-x-2 w-full",
+                    location.pathname === route.path && "bg-darkPrimary"
                   )}
                 >
                   {route.icon}

@@ -9,7 +9,7 @@ const LogoutButton = () => {
       <Button
         variant="ghost"
         className={cn(
-          "flex mb-4 hover:bg-blue-500 hover:text-white items-center justify-start gap-x-2 w-full"
+          "flex mb-4 hover:bg-darkPrimary hover:text-white items-center justify-start gap-x-2 w-full"
         )}
       >
         <ExitIcon />
