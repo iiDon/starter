@@ -54,7 +54,7 @@ export const columns: ColumnDef<User>[] = [
       const { toast } = useToast();
       const user = row.original;
       return (
-        <DropdownMenu dir="rtl">
+        <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
               <span className="sr-only">Open menu</span>

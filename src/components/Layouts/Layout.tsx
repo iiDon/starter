@@ -4,16 +4,22 @@ import Header from "./Header/Header";
 import { cn } from "@/lib/shadcn";
 import useSidebarStore from "@/store/sidebar";
 import { Toaster } from "../ui/toaster";
-import useSideBarRoutes from "./Routes";
 import { useTranslation } from "react-i18next";
+import React, { useEffect } from "react";
+import { ROUTES } from "./Routes";
 
 const Layout = () => {
   const { isSidebarOpen } = useSidebarStore((state) => state);
-  const { t } = useTranslation();
   const location = window.location.pathname;
-  const { ROUTES } = useSideBarRoutes();
-  console.log(ROUTES);
-  const routeName = ROUTES.find((route) => route.path === location)?.name;
+  const [currentPath, setCurrentPath] = React.useState(
+    ROUTES.find((route) => route.path === location)?.name
+  );
+
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    setCurrentPath(ROUTES.find((route) => route.path === location)?.name);
+  }, []);
 
   return (
     <div
@@ -41,7 +47,9 @@ const Layout = () => {
             dir={t("common.dir") || "rtl"}
             className="px-6 pt-6  overflow-y-auto"
           >
-            <h1 className="md:text-2xl text-xl font-bold mb-4">{routeName}</h1>
+            <h1 className="md:text-2xl text-xl font-bold mb-4">
+              {currentPath}
+            </h1>
             <Outlet />
           </section>
         </div>

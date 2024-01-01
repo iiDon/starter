@@ -8,5 +8,10 @@
     "users": "Users",
     "logout": "Logout"
   },
-  "name": "This is test"
+  "name": "This is test",
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "of": "of"
+  }
 }

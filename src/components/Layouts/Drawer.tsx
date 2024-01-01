@@ -14,7 +14,7 @@ import { Link, useLocation } from "react-router-dom";
 import imgUrl from "@/assets/Logo/Nairobi-colored.svg";
 import LogoutButton from "./LogoutButton";
 import { t } from "i18next";
-import useSideBarRoutes from "./Routes";
+import { ROUTES } from "./Routes";
 
 export const Logo = () => {
   return (
@@ -30,7 +30,6 @@ export const Logo = () => {
 const Drawer = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarStore((state) => state);
   const location = useLocation();
-  const { ROUTES } = useSideBarRoutes();
 
   return (
     <Sheet>

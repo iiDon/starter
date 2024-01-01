@@ -20,6 +20,8 @@ import {
 } from "@/components/ui/table";
 import React from "react";
 import { Skeleton } from "./skeleton";
+import { cn } from "@/lib/shadcn";
+import { t } from "i18next";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -66,7 +68,12 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="text-right " key={header.id}>
+                    <TableHead
+                      className={cn(
+                        `${t("common.dir") === "rtl" ? "text-right" : ""}`
+                      )}
+                      key={header.id}
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -126,10 +133,10 @@ export function DataTable<TData, TValue>({
           }}
           disabled={!table.getCanPreviousPage()}
         >
-          السابق
+          {t("pagination.previous")}
         </Button>
         <span>
-          {table.getState().pagination.pageIndex + 1} من{" "}
+          {table.getState().pagination.pageIndex + 1} {t("pagination.of")}{" "}
           {(totalPages && totalPages / 10) || 0}
         </span>
 
@@ -142,7 +149,7 @@ export function DataTable<TData, TValue>({
           }}
           disabled={!table.getCanNextPage()}
         >
-          التالي
+          {t("pagination.next")}
         </Button>
       </div>
     </div>
