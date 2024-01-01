@@ -10,10 +10,11 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import useSidebarStore from "@/store/sidebar";
 import { cn } from "@/lib/shadcn";
 import { Link, useLocation } from "react-router-dom";
-import { ROUTES } from "./Routes";
 
 import imgUrl from "@/assets/Logo/Nairobi-colored.svg";
 import LogoutButton from "./LogoutButton";
+import { t } from "i18next";
+import useSideBarRoutes from "./Routes";
 
 export const Logo = () => {
   return (
@@ -29,6 +30,7 @@ export const Logo = () => {
 const Drawer = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarStore((state) => state);
   const location = useLocation();
+  const { ROUTES } = useSideBarRoutes();
 
   return (
     <Sheet>
@@ -43,7 +45,8 @@ const Drawer = () => {
         </Button>
       </SheetTrigger>
       <SheetContent
-        dir="rtl"
+        dir={t("common.dir") || "rtl"}
+        side={t("common.dir") === "rtl" ? "right" : "left"}
         className="text-primary-foreground justify-between flex flex-col bg-primary p-4 h-full"
       >
         <div>

@@ -1,0 +1,12 @@
+{
+  "common": {
+    "dir": "rtl",
+    "Language": "اللغة"
+  },
+  "sidebar": {
+    "dashboard": "لوحة التحكم",
+    "users": "المستخدمين",
+    "logout": "تسجيل الخروج"
+  },
+  "name": "هذه تجربة"
+}

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/shadcn";
-import { ROUTES } from "./Routes";
+import useSideBarRoutes from "./Routes";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Logo } from "./Drawer";
@@ -7,6 +7,9 @@ import LogoutButton from "./LogoutButton";
 
 const Sidebar = () => {
   const location = useLocation();
+  const { ROUTES } = useSideBarRoutes();
+
+  console.log(ROUTES);
 
   return (
     <div className="text-primary-foreground justify-between flex flex-col bg-primary p-4 overflow-y-auto h-screen ">

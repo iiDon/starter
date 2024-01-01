@@ -1,6 +1,7 @@
 import { cn } from "@/lib/shadcn";
 import { Button } from "../ui/button";
 import { ExitIcon } from "@radix-ui/react-icons";
+import { t } from "i18next";
 
 const LogoutButton = () => {
   return (
@@ -13,7 +14,7 @@ const LogoutButton = () => {
         )}
       >
         <ExitIcon />
-        تسجيل الخروج
+        {t("sidebar.logout")}
       </Button>
     </div>
   );
