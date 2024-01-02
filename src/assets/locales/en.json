@@ -19,18 +19,25 @@
     "settings": "Settings",
     "logout": "Logout"
   },
-  "signIn": {
-    "title": "Enter your email below to create your account",
-    "signIn": "Sign In",
-    "email": "Email",
-    "password": "Password",
-    "rememberMe": "Remember Me",
-    "forgotPassword": "Forgot Password?",
-    "dontHaveAccount": "Don't have an account?",
-    "signUp": "Sign Up"
-  },
-  "errors": {
+  "auth": {
     "signIn": {
+      "title": "Enter your email below to create your account",
+      "signIn": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember Me",
+      "forgotPassword": "Forgot Password?",
+      "dontHaveAccount": "Don't have an account?"
+    },
+    "signUp": {
+      "title": "Enter your email below to create account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "alreadyHaveAccount": "Already have an account?",
+      "signUp": "Sign Up"
+    },
+    "errors": {
       "email": "Please enter a valid email address",
       "password": "Please enter a valid password"
     }

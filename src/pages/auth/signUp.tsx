@@ -22,7 +22,7 @@ const formSchema = z.object({
   password: z.string().min(8).max(100),
 });
 
-const SignIn = () => {
+const SignUp = () => {
   const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -59,10 +59,10 @@ const SignIn = () => {
             <div className="grid gap-2 ">
               <Language />
               <h1 className="text-xl text-center font-bold ">
-                {t("auth.signIn.signIn")}
+                {t("auth.signUp.title")}
               </h1>
               <p className="text-gray-400 text-center">
-                {t("auth.signIn.title")}
+                {t("auth.signUp.title")}
               </p>
               <FormField
                 control={form.control}
@@ -110,24 +110,12 @@ const SignIn = () => {
                 )}
               />
 
-              <Button
-                className={cn(
-                  t("common.dir") === "rtl" ? "justify-end" : "justify-start"
-                )}
-                size={"sm"}
-                variant={"link"}
-                asChild
-              >
-                <Link to="/auth/forgot-password">
-                  {t("auth.signIn.forgotPassword")}
-                </Link>
-              </Button>
               <Button type="submit" isLoading={isLoading}>
-                {t("auth.signIn.signIn")}
+                {t("auth.signUp.signUp")}
               </Button>
               <Button className={cn("")} size={"sm"} variant={"link"} asChild>
-                <Link to="/auth/signUp">
-                  {t("auth.signIn.dontHaveAccount")}
+                <Link to="/auth/signIn">
+                  {t("auth.signUp.alreadyHaveAccount")}
                 </Link>
               </Button>
             </div>
@@ -138,4 +126,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

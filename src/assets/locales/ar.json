@@ -19,18 +19,25 @@
     "settings": "الإعدادات",
     "logout": "تسجيل الخروج"
   },
-  "signIn": {
-    "title": "أدخل بريدك بالأسفل لتسجيل الدخول",
-    "signIn": "تسجيل الدخول",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "rememberMe": "تذكرني",
-    "forgotPassword": "نسيت كلمة المرور؟",
-    "dontHaveAccount": "ليس لديك حساب؟",
-    "signUp": "تسجيل"
-  },
-  "errors": {
+  "auth": {
     "signIn": {
+      "title": "أدخل بريدك بالأسفل لتسجيل الدخول",
+      "signIn": "تسجيل الدخول",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "rememberMe": "تذكرني",
+      "forgotPassword": "نسيت كلمة المرور؟",
+      "dontHaveAccount": "ليس لديك حساب؟"
+    },
+    "signUp": {
+      "title": "أدخل بريدك بالأسفل للتسجيل",
+      "signUp": "تسجيل",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "alreadyHaveAccount": "لديك حساب بالفعل؟",
+      "email": "البريد الإلكتروني"
+    },
+    "errors": {
       "email": "البريد الإلكتروني غير صحيح",
       "password": "كلمة المرور غير صحيحة"
     }

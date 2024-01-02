@@ -8,6 +8,7 @@ import Error from "./error.tsx";
 import Users from "./pages/users.tsx";
 import Layout from "./components/Layouts/Layout.tsx";
 import SignIn from "./pages/auth/signIn.tsx";
+import SignUp from "./pages/auth/signUp.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: "/auth/signIn",
     element: <SignIn />,
+  },
+  {
+    path: "/auth/signUp",
+    element: <SignUp />,
   },
   {
     path: "*",
