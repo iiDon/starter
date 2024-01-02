@@ -4,7 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/shadcn";
 // import { ReloadIcon } from "@radix-ui/react-icons";
-import { useTranslation } from "react-i18next";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
@@ -46,7 +45,6 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, isLoading, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    const { t } = useTranslation();
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
