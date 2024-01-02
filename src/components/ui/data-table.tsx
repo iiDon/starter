@@ -131,7 +131,7 @@ export function DataTable<TData, TValue>({
             table.previousPage();
             setCurrentPage(currentPage - 1);
           }}
-          disabled={!table.getCanPreviousPage()}
+          disabled={!table.getCanPreviousPage() || isLoading}
         >
           {t("pagination.previous")}
         </Button>
@@ -147,7 +147,7 @@ export function DataTable<TData, TValue>({
             table.nextPage();
             setCurrentPage(currentPage + 1);
           }}
-          disabled={!table.getCanNextPage()}
+          disabled={!table.getCanNextPage() || isLoading}
         >
           {t("pagination.next")}
         </Button>
