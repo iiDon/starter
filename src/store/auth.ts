@@ -6,7 +6,7 @@ interface AuthState {
   isAuth: Boolean;
 }
 
-const useAuthStore = create<AuthState>((set) => ({
+const useAuthStore = create<AuthState>(() => ({
   id: "",
   name: "",
   isAuth: true,

@@ -3,7 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/shadcn";
-import { ReloadIcon } from "@radix-ui/react-icons";
+// import { ReloadIcon } from "@radix-ui/react-icons";
 import { useTranslation } from "react-i18next";
 
 const buttonVariants = cva(
