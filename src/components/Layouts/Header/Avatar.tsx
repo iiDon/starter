@@ -10,6 +10,20 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "../../ui/avatar";
 
 const AvatarComponent = () => {
+  const ROWS = [
+    {
+      label: "حسابي",
+      onClick: () => console.log("حسابي"),
+    },
+    {
+      label: "الإعدادات",
+      onClick: () => console.log("الإعدادات"),
+    },
+    {
+      label: "تسجيل الخروج",
+      onClick: () => console.log("تسجيل الخروج"),
+    },
+  ];
   return (
     <DropdownMenu dir="rtl">
       <DropdownMenuTrigger asChild>
@@ -19,15 +33,21 @@ const AvatarComponent = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40">
-        <DropdownMenuLabel>حسابي</DropdownMenuLabel>
+        <DropdownMenuLabel></DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>الملف الشخصي</DropdownMenuItem>
+          {ROWS.map((row, index) => (
+            <div key={row.label}>
+              <DropdownMenuItem
+                onClick={row.onClick}
+                className="cursor-pointer"
+              >
+                {row.label}
+              </DropdownMenuItem>
+              {index !== ROWS.length - 1 && <DropdownMenuSeparator />}
+            </div>
+          ))}
         </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>الإعدادات</DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>تسجيل الخروج</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
