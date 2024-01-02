@@ -3,10 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Logo } from "./Drawer";
 import LogoutButton from "./LogoutButton";
-import { ROUTES } from "./Routes";
+import { useSideBarRoutes } from "./Routes";
 
 const Sidebar = () => {
   const location = useLocation();
+  const { ROUTES } = useSideBarRoutes();
 
   return (
     <div className="text-primary-foreground justify-between flex flex-col bg-primary p-4 overflow-y-auto h-screen ">

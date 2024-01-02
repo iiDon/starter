@@ -6,11 +6,12 @@ import useSidebarStore from "@/store/sidebar";
 import { Toaster } from "../ui/toaster";
 import { useTranslation } from "react-i18next";
 import React, { useEffect } from "react";
-import { ROUTES } from "./Routes";
+import { useSideBarRoutes } from "./Routes";
 
 const Layout = () => {
   const { isSidebarOpen } = useSidebarStore((state) => state);
   const location = window.location.pathname;
+  const { ROUTES } = useSideBarRoutes();
   const [currentPath, setCurrentPath] = React.useState(
     ROUTES.find((route) => route.path === location)?.name
   );

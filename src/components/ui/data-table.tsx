@@ -21,7 +21,7 @@ import {
 import React from "react";
 import { Skeleton } from "./skeleton";
 import { cn } from "@/lib/shadcn";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -41,6 +41,7 @@ export function DataTable<TData, TValue>({
   totalPages,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
+  const { t } = useTranslation();
 
   const table = useReactTable({
     data,
