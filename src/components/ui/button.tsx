@@ -53,17 +53,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}
         disabled={props.disabled || isLoading}
-      >
-        <div
-          className={cn(
-            "flex items-center ",
-            t("common.dir") === "rtl" ? "flex-row-reverse gap-x-2" : ""
-          )}
-        >
-          {isLoading && <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />}
-          {props.children}
-        </div>
-      </Comp>
+      />
     );
   }
 );
