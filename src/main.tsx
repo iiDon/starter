@@ -5,8 +5,9 @@ import "./styles/globals.css";
 import "./i18n";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./error.tsx";
-import Users from "./users.tsx";
+import Users from "./pages/users.tsx";
 import Layout from "./components/Layouts/Layout.tsx";
+import SignIn from "./pages/auth/signIn.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
         element: <Users />,
       },
     ],
+  },
+  {
+    path: "/auth/signIn",
+    element: <SignIn />,
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 

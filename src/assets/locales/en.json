@@ -18,5 +18,21 @@
     "myAccount": "My Account",
     "settings": "Settings",
     "logout": "Logout"
+  },
+  "signIn": {
+    "title": "Enter your email below to create your account",
+    "signIn": "Sign In",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "errors": {
+    "signIn": {
+      "email": "Please enter a valid email address",
+      "password": "Please enter a valid password"
+    }
   }
 }
