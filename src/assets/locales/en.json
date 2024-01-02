@@ -13,5 +13,10 @@
     "previous": "Previous",
     "next": "Next",
     "of": "of"
+  },
+  "avatar": {
+    "myAccount": "My Account",
+    "settings": "Settings",
+    "logout": "Logout"
   }
 }

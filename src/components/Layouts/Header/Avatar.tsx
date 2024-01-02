@@ -8,24 +8,26 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarImage, AvatarFallback } from "../../ui/avatar";
+import { useTranslation } from "react-i18next";
 
 const AvatarComponent = () => {
+  const { t } = useTranslation();
   const ROWS = [
     {
-      label: "حسابي",
-      onClick: () => console.log("حسابي"),
+      label: t("avatar.myAccount"),
+      onClick: () => console.log(t("avatar.myAccount")),
     },
     {
-      label: "الإعدادات",
-      onClick: () => console.log("الإعدادات"),
+      label: t("avatar.settings"),
+      onClick: () => console.log(t("avatar.settings")),
     },
     {
-      label: "تسجيل الخروج",
-      onClick: () => console.log("تسجيل الخروج"),
+      label: t("avatar.logout"),
+      onClick: () => console.log(t("avatar.logout")),
     },
   ];
   return (
-    <DropdownMenu dir="rtl">
+    <DropdownMenu dir={t("common.dir") === "rtl" ? "rtl" : "ltr"}>
       <DropdownMenuTrigger asChild>
         <Avatar className="cursor-pointer">
           <AvatarImage src="https://github.com/shadcn.png" />
@@ -33,7 +35,7 @@ const AvatarComponent = () => {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40">
-        <DropdownMenuLabel></DropdownMenuLabel>
+        <DropdownMenuLabel>{t("avatar.myAccount")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           {ROWS.map((row, index) => (
