@@ -9,11 +9,17 @@ import Users from "./pages/users.tsx";
 import Layout from "./components/Layouts/Layout.tsx";
 import SignIn from "./pages/auth/signIn.tsx";
 import SignUp from "./pages/auth/signUp.tsx";
+import Unauthorized from "./components/Unauthorized.tsx";
+import Protected from "./components/Protected.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/dashboard",
-    element: <Layout />,
+    element: (
+      <Protected>
+        <Layout />
+      </Protected>
+    ),
     errorElement: <Error />,
     children: [
       {
@@ -27,13 +33,28 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/auth/signIn",
-    element: <SignIn />,
+    path: "/auth/",
+    children: [
+      {
+        path: "signIn",
+        element: (
+          <Unauthorized>
+            <SignIn />
+          </Unauthorized>
+        ),
+      },
+      {
+        path: "signUp",
+
+        element: (
+          <Unauthorized>
+            <SignUp />
+          </Unauthorized>
+        ),
+      },
+    ],
   },
-  {
-    path: "/auth/signUp",
-    element: <SignUp />,
-  },
+
   {
     path: "*",
     element: <Error />,
