@@ -1,16 +1,16 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header/Header";
 import { cn } from "@/lib/shadcn";
 import useSidebarStore from "@/store/sidebar";
 import { Toaster } from "../ui/toaster";
 import { useTranslation } from "react-i18next";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useSideBarRoutes } from "./Routes";
 
 const Layout = () => {
   const { isSidebarOpen } = useSidebarStore((state) => state);
-  const location = window.location.pathname;
+  const location = useLocation().pathname;
   const { ROUTES } = useSideBarRoutes();
   const [currentPath, setCurrentPath] = React.useState(
     ROUTES.find((route) => route.path === location)?.name
@@ -18,9 +18,11 @@ const Layout = () => {
 
   const { t } = useTranslation();
 
-  useEffect(() => {
+  useMemo(() => {
     setCurrentPath(ROUTES.find((route) => route.path === location)?.name);
-  }, []);
+    console.log(currentPath);
+    console.log("location", location);
+  }, [location]);
 
   return (
     <div
