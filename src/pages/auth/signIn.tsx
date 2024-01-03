@@ -16,6 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import useAuthStore from "@/store/auth";
 
 const formSchema = z.object({
   email: z.string().min(2).max(50),
@@ -26,6 +27,7 @@ const SignIn = () => {
   const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
+  const { setAuth } = useAuthStore();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,6 +42,7 @@ const SignIn = () => {
       setIsLoading(true);
 
       await new Promise((resolve) => setTimeout(resolve, 2000));
+      setAuth();
       console.log(values);
     } catch (error) {
     } finally {
@@ -112,6 +115,7 @@ const SignIn = () => {
 
               <Button
                 className={cn(
+                  "w-fit",
                   t("common.dir") === "rtl" ? "justify-end" : "justify-start"
                 )}
                 size={"sm"}
@@ -125,7 +129,12 @@ const SignIn = () => {
               <Button type="submit" isLoading={isLoading}>
                 {t("auth.signIn.signIn")}
               </Button>
-              <Button className={cn("")} size={"sm"} variant={"link"} asChild>
+              <Button
+                className={cn("w-fit m-auto")}
+                size={"sm"}
+                variant={"link"}
+                asChild
+              >
                 <Link to="/auth/signUp">
                   {t("auth.signIn.dontHaveAccount")}
                 </Link>
