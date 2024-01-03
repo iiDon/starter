@@ -15,6 +15,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "../ui/use-toast";
 import { User } from "@/store/user";
+import { Link } from "react-router-dom";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -43,6 +44,14 @@ export const columns: ColumnDef<User>[] = [
   {
     accessorKey: "title",
     header: "الاسم",
+    cell: ({ row }) => (
+      <Link
+        to={`/dashboard/users/${row.original.id}`}
+        className="cursor-pointer"
+      >
+        {row.original.title}
+      </Link>
+    ),
   },
   {
     accessorKey: "price",
