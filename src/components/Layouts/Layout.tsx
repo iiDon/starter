@@ -5,7 +5,7 @@ import { cn } from "@/lib/shadcn";
 import useSidebarStore from "@/store/sidebar";
 import { Toaster } from "../ui/toaster";
 import { useTranslation } from "react-i18next";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { useSideBarRoutes } from "./Routes";
 
 const Layout = () => {
@@ -18,7 +18,7 @@ const Layout = () => {
 
   const { t } = useTranslation();
 
-  useMemo(() => {
+  useEffect(() => {
     setCurrentPath(ROUTES.find((route) => route.path === location)?.name);
     console.log(currentPath);
     console.log("location", location);
