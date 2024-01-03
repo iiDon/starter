@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import App from "./pages/dashboard/index.tsx";
 import "./styles/globals.css";
 import "./i18n";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error from "./error.tsx";
-import Users from "./pages/users.tsx";
+import Users from "./pages/dashboard/users.tsx";
 import Layout from "./components/Layouts/Layout.tsx";
 import SignIn from "./pages/auth/signIn.tsx";
 import SignUp from "./pages/auth/signUp.tsx";

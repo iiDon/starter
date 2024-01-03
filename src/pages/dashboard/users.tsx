@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { columns } from "../components/Users/columns";
-import { DataTable } from "../components/ui/data-table";
-import useUserStore from "../store/user";
+import { columns } from "../../components/Users/columns";
+import { DataTable } from "../../components/ui/data-table";
+import useUserStore from "../../store/user";
 const Users = () => {
   const { users, getUsers, total, isLoading, currentPage, setCurrentPage } =
     useUserStore((state) => state);
